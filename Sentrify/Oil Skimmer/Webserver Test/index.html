@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script>
+        setInterval(function() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("counter").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "/counter", true);
+            xhttp.send();
+        }, 1000);
+    </script>
+</head>
+
+<body>
+    <h1>Hello World!</h1>
+    <h2>Counter: <span id="counter"></span></h2>
+</body>
+
+</html>
